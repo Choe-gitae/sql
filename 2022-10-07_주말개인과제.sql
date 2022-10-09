@@ -90,7 +90,7 @@ WHERE salary > (SELECT salary FROM employee WHERE eno = 7499) ;
 -- 문제 18
 SELECT e.ename ename, e.salary salary, e.dno dno
 FROM employee e, (SELECT dno, MIN(sal) min FROM employee GROUP BY dno) d
-WHERE e.salary = d.min ;
+WHERE e.salary = d.min AND e.dno = d.dno ;
 
 -- 문제 19
 SELECT SUBSTR(ename,1,1) || '*****' ||SUBSTR(ename,-1,1) ename
@@ -119,6 +119,10 @@ ORDER BY ms DESC ;
 
 SELECT deptno, MIN(sal) FROM emp GROUP BY deptno;
 SELECT SUBSTR(ename,1,1) || '*****' ||SUBSTR(ename,-1,1) ename FROM emp
+
+SELECT e.ename ename, e.sal sal, e.deptno deptno
+FROM emp e, (SELECT deptno, MIN(sal) min FROM emp GROUP BY deptno) d
+WHERE e.sal = d.min AND e.DEPTNO = d.deptno ;
 -----------------------------------------------------------------------------------
 
 -- 문제 1		기본포트
