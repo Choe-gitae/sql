@@ -26,3 +26,11 @@ INSERT INTO emp(empno, ENAME) VALUES (seq_temp2.nextval, '박씨');
 select empno, ename, job, rowid from emp;
 
 -- CREATE INDEX idx_emp_salary ON employees(salary);
+
+CREATE SEQUENCE seq_infono;
+
+INSERT INTO vid_info(dir, tit, act, gen, summ) VALUES (?,?,?,?,?)
+
+SELECT v.vidno vidno, i.tit tit, i.act act 
+FROM vid_info i LEFT OUTER JOIN video v
+ON v.infono = i.infono ;

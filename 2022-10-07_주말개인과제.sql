@@ -134,7 +134,7 @@ WHERE e.sal = d.min AND e.DEPTNO = d.deptno ;
 ALTER USER scott IDENTIFIED BY tiger;
 
 -- 문제 3
-CREATE USER scott IDENTIFIED BY 1234;
+CREATE USER scott IDENTIFIED BY tiger;
 GRANT RESOURCE, CONNECT, DBA TO scott;
 
 -- 문제 4
@@ -143,7 +143,7 @@ CREATE TABLE dept
 	dno NUMBER(2),
 	dname VARCHAR2(14),
 	loc VARCHAR2(13),
-	CONSTRAINT pk_dept_dno PRIMARY KEY (dno)
+	CONSTRAINT pk_emp_dno PRIMARY KEY (dno)
 );
 
 CREATE TABLE emp
